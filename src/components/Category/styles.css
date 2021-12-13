@@ -1,0 +1,31 @@
+.Category-title{
+	font-weight: bold;
+}
+
+.Category-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.Category-list li::before {
+	color: #09f;
+	content: '-';
+	margin-right: .5em;
+}
+
+.Category-link {
+	color: white;
+	padding: .5em;
+	transition: color ease-in .1s;
+}
+
+.Category-link:hover {
+	color: #09f;
+}
+
+@media screen and (min-width: 768px) {
+	.Category-list {
+			display: list-item;
+	}
+}

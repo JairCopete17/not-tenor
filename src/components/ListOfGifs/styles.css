@@ -1,0 +1,28 @@
+:root {
+  --results-columns: 2;
+}
+
+.ListOfGifs {
+  column-count: var(--results-columns);
+  gap: 0;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --results-columns: 3;
+  }
+
+  .ListOfGifs {
+    column-gap: .25em;
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --results-columns: 4;
+  }
+
+  .ListOfGifs {
+    column-gap: .5em;
+  }
+}
