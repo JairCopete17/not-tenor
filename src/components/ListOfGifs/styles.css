@@ -5,6 +5,7 @@
 .ListOfGifs {
   column-count: var(--results-columns);
   gap: 0;
+  min-height: 100vh;
 }
 
 @media (min-width: 768px) {
