@@ -8,12 +8,6 @@
 	justify-content: space-evenly;
 }
 
-.Category-list li::before {
-	color: #09f;
-	content: '-';
-	margin-right: .5em;
-}
-
 .Category-link {
 	color: white;
 	padding: .5em;

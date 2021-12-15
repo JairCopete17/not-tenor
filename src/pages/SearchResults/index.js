@@ -1,19 +1,24 @@
-import { useGifs } from '../../hooks/useGifs'
+import { useGifs } from 'hooks/useGifs'
 
-import Spinner from '../../components/Spinner'
-import ListOfGifs from '../../components/ListOfGifs'
+import Spinner from 'components/Spinner'
+import ListOfGifs from 'components/ListOfGifs'
 
 export default function SearchResults ({ params }) {
   const { keyword } = params
-	const { loading, gifs } = useGifs({ keyword })
+	const { loading, gifs, setPage } = useGifs({ keyword })
+
+  const handleNextPage = () => {
+    setPage(prevPage => prevPage + 1)
+  }
 
   return <>
     {loading
       ? <Spinner />
       : <>
-          <h3 className="App-title">{keyword}</h3>
+          <h3 className="App-title">{decodeURI(keyword)}</h3>
           <ListOfGifs gifs={gifs} />
         </>
     }
+    <button onClick={handleNextPage}>Get next page</button>
   </>
 }
