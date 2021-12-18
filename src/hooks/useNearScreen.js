@@ -13,7 +13,6 @@ export default function useNearScreen ({ distance = '100px', externalRef, once =
       const el = entries[0]
       if (el.isIntersecting) {
         setShow(true)
-        observer.disconnect()
         once && observer.disconnect()
       } else {
         !once && setShow(false)
@@ -29,7 +28,6 @@ export default function useNearScreen ({ distance = '100px', externalRef, once =
         rootMargin: distance
       })
 
-      observer.observe(fromRef.current)
       if (element) observer.observe(element)
     })
 
