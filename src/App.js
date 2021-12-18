@@ -1,6 +1,6 @@
+import React, { Suspense } from 'react'
 import { Link, Route } from 'wouter'
 
-import Home from './pages/Home'
 import SearchResults from './pages/SearchResults'
 import Detail from './pages/Detail'
 
@@ -9,31 +9,35 @@ import { GifsContextProvider } from './context/GifsContext'
 
 import './App.css'
 
+const HomePage = React.lazy(() => import('./pages/Home'))
+
 export default function App() {
   return (
     <StaticContext.Provider>
       <div className="App">
-        <section className="App-content">
-          <Link to="/">
-            <figure className="App-logo">
-              <img alt='Nottenor logo' src='/logo.png' />
-            </figure>
-          </Link>
-          <GifsContextProvider>
-            <Route
-              component={Home}
-              path='/'
-            />
-            <Route
-              component={SearchResults}
-              path='/search/:keyword'
-            />
-            <Route
-              component={Detail}
-              path='/gif/:id'
-            />
-          </GifsContextProvider>
-        </section>
+        <Suspense fallback={null}>
+          <section className="App-content">
+            <Link to="/">
+              <figure className="App-logo">
+                <img alt='Nottenor logo' src='/logo.png' />
+              </figure>
+            </Link>
+            <GifsContextProvider>
+              <Route
+                component={HomePage}
+                path='/'
+              />
+              <Route
+                component={SearchResults}
+                path='/search/:keyword'
+              />
+              <Route
+                component={Detail}
+                path='/gif/:id'
+              />
+            </GifsContextProvider>
+          </section>
+        </Suspense>
       </div>
     </StaticContext.Provider>
   )
