@@ -39,20 +39,28 @@
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
   .App-main {
     flex-direction: initial;
   }
 
+  .App-content {
+    padding: 10px 20px;
+  }
+
+  .App-title {
+    margin: 20px 0;
+  }
+
   .App-results {
     flex-shrink: 2;
+    width: 100%;
   }
 
   .App-category {
-    padding: 0 2em;
     position: sticky;
     top: 0;
-    width: 40%;
+    width: 50%;
   }
 
   .App-logo img {
@@ -60,12 +68,8 @@
   }
 }
 
-@media (min-width: 768px) {
-  .App-content {
-    padding: 10px 20px;
-  }
-
-  .App-title {
-    margin: 20px 0;
+@media (min-width: 1024px) {
+  .App-category {
+    width: 30%;
   }
 }

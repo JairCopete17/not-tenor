@@ -3,27 +3,10 @@
 }
 
 .ListOfGifs {
-  column-count: var(--results-columns);
-  gap: 0;
+  align-items: center;
+  display: grid;
+  gap: 0 16px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: masonry;
   min-height: 100vh;
-}
-
-@media (min-width: 768px) {
-  :root {
-    --results-columns: 3;
-  }
-
-  .ListOfGifs {
-    column-gap: .25em;
-  }
-}
-
-@media (min-width: 1000px) {
-  :root {
-    --results-columns: 4;
-  }
-
-  .ListOfGifs {
-    column-gap: .5em;
-  }
 }
