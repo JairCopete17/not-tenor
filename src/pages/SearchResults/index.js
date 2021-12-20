@@ -1,7 +1,6 @@
 import debounce from 'just-debounce-it'
 import { useCallback, useRef, useEffect } from 'react'
 
-
 import { useGifs } from 'hooks/useGifs'
 import useNearScreen from 'hooks/useNearScreen'
 
