@@ -8,8 +8,9 @@ import TrendingSearches from 'components/TrendingSearches'
 import SearchForm from 'components/SearchForm'
 
 export default function Home() {
-	const { loading, gifs } = useGifs()
-	const [path, pushLocation] = useLocation()
+	const { gifs } = useGifs()
+	// eslint-disable-next-line no-unused-vars
+	const [_, pushLocation] = useLocation()
 
 	const handleSubmit = useCallback(({ keyword	}) => {
 		pushLocation(`/search/${keyword}`)
