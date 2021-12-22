@@ -3,7 +3,7 @@
 }
 
 .App-content {
-  background-color: #282c34;
+  background-color: #121212;
   color: white;
   display: flex;
   flex-direction: column;
@@ -60,7 +60,7 @@
   .App-category {
     position: sticky;
     top: 0;
-    width: 50%;
+    width: 40%;
   }
 
   .App-logo img {
